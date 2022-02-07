@@ -44,7 +44,6 @@ namespace RandomNumberGenerator
             string help = "?help";
             string verboxtest = "?ver";
             string breakprogram = "breakprogram";
-            string cpustresstest = "?!cpustresstest";
             //recognise commands and execution
             while (noinput == noinput)
             {
@@ -90,34 +89,6 @@ namespace RandomNumberGenerator
                     programbreak.breakprogramexecute();
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
-                else if (input == cpustresstest)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    TESTcpustressTEST tcpustressTEST = new TESTcpustressTEST();
-                    //int percentage;
-                    //tcpustressTEST.cpustresstestexecute(percentage);
-                    for (int ix = 0; ix < Environment.ProcessorCount; ++ix)
-                    {
-                        new Thread(loopForever).Start();
-                    }
-                    while (true)
-                    {
-                        Console.WriteLine("Stress testing :-)");
-                        while (true)
-                        {
-                            Console.WriteLine("Stress testing :-)");
-                            while (true)
-                            {
-                                Console.WriteLine("Stress testing :-)");
-                                while (true)
-                                {
-                                    Console.WriteLine("Stress testing :-)");
-                                }
-                            }
-                        }
-                    }
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
                 //if command isn't recognised
                 else if (input != generate)
                 {
@@ -144,12 +115,6 @@ namespace RandomNumberGenerator
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
                 else if (input != breakprogram)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != cpustresstest)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Command not recognised!");
