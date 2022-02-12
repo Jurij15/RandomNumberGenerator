@@ -19,7 +19,15 @@ namespace RandomNumberGenerator.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        //[STAThread]
+        public string? number { get; set; }
+        public void generateinternal()
+        {
+            Random random = new Random();
+            int answer = random.Next(1, 201);
+            string textanswer = answer.ToString();
+            number = textanswer;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
