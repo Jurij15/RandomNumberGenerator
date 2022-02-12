@@ -8,6 +8,6 @@ namespace RandomNumberGenerator
 {
     public class version
     {
-        public string Versionstring = "null";
+        public string Versionstring = "1.0";
     }
 }

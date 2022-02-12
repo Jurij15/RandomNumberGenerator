@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using RandomNumberGenerator.GUI;
 
 namespace RandomNumberGenerator.ConsoleClasses.Commands
 {
@@ -12,7 +13,8 @@ namespace RandomNumberGenerator.ConsoleClasses.Commands
     {
         public void guiexecute()
         {
-            System.Windows.MessageBox.Show("TBD");
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.ShowDialog();
         }
     }
 }

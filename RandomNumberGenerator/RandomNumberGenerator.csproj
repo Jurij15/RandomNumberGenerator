@@ -9,8 +9,4 @@
     <UseWPF>True</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="GUI\" />
-  </ItemGroup>
-
 </Project>

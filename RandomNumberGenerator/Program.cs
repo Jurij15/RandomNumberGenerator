@@ -17,8 +17,8 @@ namespace RandomNumberGenerator
         {
             while (true) ;
         }
-        private static int percentage;
-
+        //private static int percentage;
+        [STAThread]
         static void Main(string[] args)
         {
             ConsoleColor background = Console.BackgroundColor;
@@ -26,7 +26,7 @@ namespace RandomNumberGenerator
             Console.ForegroundColor = ConsoleColor.DarkRed;
             System.Console.WriteLine("RandomNumberGenerator, by Jurij15");
             Thread.Sleep(100);
-            System.Console.WriteLine("v0.1");
+            System.Console.WriteLine("v1.0");
             Thread.Sleep(300);
             //initializing
             Console.ResetColor();
@@ -40,6 +40,7 @@ namespace RandomNumberGenerator
             //commands
             string noinput = "";
             string generate = "gen";
+            string infinitegenerate = "gen inf";
             string gui = "gui";
             string help = "?help";
             string verboxtest = "?ver";
@@ -89,6 +90,13 @@ namespace RandomNumberGenerator
                     programbreak.breakprogramexecute();
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
+                else if (input == infinitegenerate)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    infinitegen infgen = new infinitegen();
+                    infgen.infinitegenExecute();
+                    //Console.ForegroundColor = ConsoleColor.Cyan;
+                }
                 //if command isn't recognised
                 else if (input != generate)
                 {
@@ -115,6 +123,12 @@ namespace RandomNumberGenerator
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
                 else if (input != breakprogram)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Command not recognised!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
+                else if (input != infinitegenerate)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Command not recognised!");
