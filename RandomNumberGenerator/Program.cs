@@ -45,6 +45,7 @@ namespace RandomNumberGenerator
             string help = "?help";
             string verboxtest = "?ver";
             string breakprogram = "breakprogram";
+            string exit = "exit";
             //recognise commands and execution
             while (noinput == noinput)
             {
@@ -97,6 +98,13 @@ namespace RandomNumberGenerator
                     infgen.infinitegenExecute();
                     //Console.ForegroundColor = ConsoleColor.Cyan;
                 }
+                else if (input == exit)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    exitcomm exitcomm = new exitcomm();
+                    exitcomm.exitExecute();
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
                 //if command isn't recognised
                 else if (input != generate)
                 {
@@ -129,6 +137,12 @@ namespace RandomNumberGenerator
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
                 else if (input != infinitegenerate)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Command not recognised!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
+                else if (input != exit)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Command not recognised!");
