@@ -15,8 +15,8 @@ namespace RandomNumberGenerator.ConsoleClasses.Commands
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowInTaskbar = false;
-            mainWindow.ShowDialog();
             Console.WriteLine("Opened GUI");
+            mainWindow.ShowDialog();
         }
     }
 }
