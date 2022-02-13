@@ -7,12 +7,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>True</UseWindowsForms>
     <UseWPF>True</UseWPF>
-    <ApplicationIcon>klipartz.com.ico</ApplicationIcon>
+    <ApplicationIcon>random-icon-generator-7.ico</ApplicationIcon>
     <PackageIcon>random-icon-generator-7.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="klipartz.com.ico" />
+    <Content Include="random-icon-generator-7.ico" />
   </ItemGroup>
 
   <ItemGroup>
