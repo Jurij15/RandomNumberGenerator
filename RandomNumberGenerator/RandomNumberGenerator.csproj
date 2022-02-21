@@ -12,7 +12,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ConsoleClasses\startup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="random-icon-generator-7.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="startup.cs" />
   </ItemGroup>
 
   <ItemGroup>

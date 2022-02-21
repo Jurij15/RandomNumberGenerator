@@ -7,6 +7,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 using RandomNumberGenerator.ConsoleClasses.Commands;
+using RandomNumberGenerator.ConsoleClasses;
 using System.Diagnostics;
 
 namespace RandomNumberGenerator
@@ -21,22 +22,8 @@ namespace RandomNumberGenerator
         [STAThread]
         static void Main(string[] args)
         {
-            ConsoleColor background = Console.BackgroundColor;
-            ConsoleColor foreground = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            System.Console.WriteLine("RandomNumberGenerator, by Jurij15");
-            Thread.Sleep(100);
-            System.Console.WriteLine("v1.0");
-            Thread.Sleep(300);
-            //initializing
-            Console.ResetColor();
-            System.Console.WriteLine("Initializing...");
-            Thread.Sleep(300);
-            //help command
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Type ?help for help");
-            ///the whole command system
-            System.Console.WriteLine("Enter a command...");
+            startup startup = new startup();
+            startup.doonstart();
             //commands
             string noinput = "";
             string generate = "gen";
