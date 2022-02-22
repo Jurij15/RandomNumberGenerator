@@ -19,6 +19,7 @@ namespace RandomNumberGenerator.ConsoleClasses
             string verboxtest = "?ver";
             string breakprogram = "breakprogram";
             string exit = "exit";
+            string testdumptofile = "?!tofile";
             //recognise commands and execution
             while (noinput == noinput)
             {
@@ -78,6 +79,13 @@ namespace RandomNumberGenerator.ConsoleClasses
                     exitcomm.exitExecute();
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
+                else if (input == testdumptofile)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    ToFIle toFIle = new ToFIle();
+                    toFIle.ToFileExecute();
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
                 //if command isn't recognised
                 else if (input != generate)
                 {
@@ -116,6 +124,12 @@ namespace RandomNumberGenerator.ConsoleClasses
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
                 else if (input != exit)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Command not recognised!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
+                else if (input != testdumptofile)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Command not recognised!");
