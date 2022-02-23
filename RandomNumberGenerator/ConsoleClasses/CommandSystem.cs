@@ -20,6 +20,7 @@ namespace RandomNumberGenerator.ConsoleClasses
             string breakprogram = "breakprogram";
             string exit = "exit";
             string testdumptofile = "?!tofile";
+            string testdumptofileinfinite = "?!tofile inf";
             //recognise commands and execution
             while (noinput == noinput)
             {
@@ -86,6 +87,13 @@ namespace RandomNumberGenerator.ConsoleClasses
                     toFIle.ToFileExecute();
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
+                else if (input == testdumptofileinfinite)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    InfiniteToFIle infiniteToFIle = new InfiniteToFIle();
+                    infiniteToFIle.inftofileExecute();
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
                 //if command isn't recognised
                 else if (input != generate)
                 {
@@ -130,6 +138,12 @@ namespace RandomNumberGenerator.ConsoleClasses
                     Console.ForegroundColor = ConsoleColor.Cyan;
                 }
                 else if (input != testdumptofile)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Command not recognised!");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                }
+                else if (input != testdumptofileinfinite)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine("Command not recognised!");
