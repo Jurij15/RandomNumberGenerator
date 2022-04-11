@@ -19,8 +19,8 @@ namespace RandomNumberGenerator.ConsoleClasses
             string verboxtest = "?ver";
             string breakprogram = "breakprogram";
             string exit = "exit";
-            string testdumptofile = "?!tofile";
-            string testdumptofileinfinite = "?!tofile inf";
+            string testdumptofile = "ToFile";
+            //string testdumptofileinfinite = "?!tofile inf";
             //recognise commands and execution
             while (noinput == noinput)
             {
@@ -83,71 +83,102 @@ namespace RandomNumberGenerator.ConsoleClasses
                 else if (input == testdumptofile)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    ToFIle toFIle = new ToFIle();
-                    toFIle.ToFileExecute();
+                    Console.WriteLine("Please enter the file path");
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input == testdumptofileinfinite)
-                {
+                    string filepath = Console.ReadLine();
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    InfiniteToFIle infiniteToFIle = new InfiniteToFIle();
-                    infiniteToFIle.inftofileExecute();
+                    Console.WriteLine("Please enter how many numbers you want (1-999999");
                     Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                //if command isn't recognised
-                else if (input != generate)
-                {
+                    string amount = Console.ReadLine();
+                    int amountint = Convert.ToInt32(amount);
+                    int maxnum = 999999;
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != gui)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != help)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != verboxtest)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != breakprogram)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != infinitegenerate)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != exit)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != testdumptofile)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                }
-                else if (input != testdumptofileinfinite)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Command not recognised!");
-                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    if (amountint > maxnum)
+                    {
+                        Console.WriteLine("Your number is higher than 999999!");
+                        Console.WriteLine("This may result in high CPU usage and large filesize!");
+                        while (Console.ReadKey().Key == ConsoleKey.Enter)
+                        {
+                            Console.WriteLine("Press enter to start generating...");
+                            ToFIle.ToFileExecute(amountint);
+                        }
+
+                    }
+                    else if (amountint < maxnum)
+                    {
+                        Console.WriteLine("Press enter to start generating...");
+                        while (Console.ReadKey().Key == ConsoleKey.Enter)
+                        {
+                            //Console.WriteLine("Press enter to start generating...");
+                            ToFIle.ToFileExecute(amountint);
+                        }
+                    }
+                    /*
+                    else if (input == testdumptofileinfinite)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        InfiniteToFIle infiniteToFIle = new InfiniteToFIle();
+                        infiniteToFIle.inftofileExecute();
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    */
+                    //if command isn't recognised
+                    else if (input != generate)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (input != gui)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (input != help)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (input != verboxtest)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (input != breakprogram)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (input != infinitegenerate)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (input != exit)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (input != testdumptofile)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    /*
+                    else if (input != testdumptofileinfinite)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("Command not recognised!");
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    */
                 }
             }
         }

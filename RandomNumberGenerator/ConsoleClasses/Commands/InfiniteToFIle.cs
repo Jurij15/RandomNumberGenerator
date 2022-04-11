@@ -11,22 +11,18 @@ namespace RandomNumberGenerator.ConsoleClasses.Commands
     {
         public void inftofileExecute()
         {
-            string path = "randomINF.txt";
-            using (FileStream fs = File.Create(path)) ;
-            List<string> lines = new List<string>();
-            StreamReader reader = new StreamReader("randomINF.txt");
-            while (true)
+            string filename = "randomINF.txt";
+            using (FileStream fs = File.Create(filename))
             {
-                /*
-                Random random = new Random();
-                int answer = random.Next(1, 201);
-                string number = answer.ToString();
-                lines.Add(number);
-                Console.WriteLine(number);
-                */
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter("randomINF.txt", true))
+                while (true)
                 {
-                    file.WriteLine("text to edit / append ...");
+                    Random random = new Random();
+                    int answer = random.Next(1, 201);
+                    string textanswer = answer.ToString();
+                    //number = textanswer;
+                    Byte[] title = new UTF8Encoding(true).GetBytes(textanswer);
+                    fs.Write(title, 0, title.Length);
+                    Console.WriteLine(textanswer);
                 }
             }
         }
